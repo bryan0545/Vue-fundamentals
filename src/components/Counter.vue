@@ -1,7 +1,7 @@
 <template>
   <h2>{{ customTitle }}</h2>
-  <p>{{ count }}</p>
   <p>{{ count }}<sup>2</sup> = {{ squareCounter }}</p>
+  <p data-test-id="counter">{{ count }}</p>
   <button @click="decrement">-</button>
   <button @click="increment">+</button>
 </template>
@@ -12,7 +12,7 @@ export default {
     title: String,
     start: {
       type: Number,
-      default: 0,
+      default: 100,
       validator(value) {
         return value >= 0;
       },
